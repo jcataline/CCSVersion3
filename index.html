@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ongoing Care for Chronic Conditions | Convenient Care Solutions — OH, IL, FL &amp; PA</title>
+<meta name="description" content="Physician-led management of blood pressure, diabetes, thyroid, cholesterol and sleep apnea. In-network with Medicare, Medicaid and most major Ohio plans, and with Medicare in Florida. Canfield office plus video visits in Ohio, Illinois, Florida and Pennsylvania.">
+<link rel="canonical" href="https://www.convenientcaresolutions.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M44.9 16.7 A20 20 0 1 0 44.9 47.3' fill='none' stroke='%230F2547' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M32 6 C32.7 9.6 34.4 11.3 38 12 C34.4 12.7 32.7 14.4 32 18 C31.3 14.4 29.6 12.7 26 12 C29.6 11.3 31.3 9.6 32 6 Z' fill='%23D9AE45'/%3E%3C/svg%3E">
+<meta name="geo.placename" content="Canfield, Ohio">
+<meta name="geo.region" content="US-OH">
+<meta name="coverage" content="Ohio, Illinois, Florida, Pennsylvania">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Brand navy — swap this one value to match your exact house navy */
+    --navy:#0F2547;
+    --navy-soft:#1B3A69;
+    --paper:#F0F3F8;
+    --paper-warm:#E3EAF4;
+    --gold:#9A7A22;        /* star + eyebrows on light backgrounds */
+    --gold-lift:#D9AE45;   /* star + eyebrows on navy */
+    --stone:#556579;
+    --line:#C9D4E3;
+    --measure:64rem;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--navy);
+    font-family:'Archivo',system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:400;letter-spacing:-0.015em;margin:0;}
+  h1{font-size:clamp(2.5rem,7vw,4.4rem);line-height:1.04;}
+  h2{font-size:clamp(1.85rem,4.4vw,2.9rem);line-height:1.12;}
+  h3{font-size:1.22rem;line-height:1.3;}
+  p{margin:0 0 1rem;}
+  a{color:inherit;}
+  .wrap{width:min(100% - 2.5rem,var(--measure));margin-inline:auto;}
+  .eyebrow{
+    font-size:0.7rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 1.1rem;display:block;
+  }
+  .lede{font-size:clamp(1.05rem,2.2vw,1.22rem);color:var(--stone);max-width:38ch;}
+
+  /* ---- header ---- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(239,241,235,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0;}
+  .mark{
+    font-family:'Newsreader',serif;font-size:1.12rem;letter-spacing:-0.01em;text-decoration:none;
+    display:flex;align-items:center;gap:.6rem;
+  }
+  .mark span{color:var(--gold);}
+  .logo{width:56px;height:56px;flex:none;display:block;}
+  .logo-lg{width:78px;height:78px;margin-bottom:.9rem;}
+  .orbit-ring{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;opacity:.32;}
+  .orb{
+    offset-path:path("M -2,32 a 34,14 0 1,0 68,0 a 34,14 0 1,0 -68,0");
+    offset-distance:0%;
+  }
+  /* near half of the lap (0-50%) passes in front of the C; far half is occluded by it */
+  .orb-front{animation:orbit 15s linear infinite, showFront 15s linear infinite;}
+  .orb-back{animation:orbit 15s linear infinite, showBack 15s linear infinite;}
+  @keyframes orbit{to{offset-distance:100%;}}
+  @keyframes showFront{0%,49.99%{opacity:1}50%,100%{opacity:0}}
+  @keyframes showBack{0%,49.99%{opacity:0}50%,100%{opacity:1}}
+  .btn{
+    display:inline-block;font-family:'Archivo',sans-serif;font-size:.88rem;font-weight:600;
+    letter-spacing:.02em;text-decoration:none;padding:.7rem 1.35rem;border-radius:2px;
+    transition:background .18s ease,color .18s ease,border-color .18s ease;
+  }
+  .btn-solid{background:var(--navy);color:var(--paper);border:1px solid var(--navy);}
+  .btn-solid:hover{background:var(--gold);border-color:var(--gold);}
+  .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--navy);}
+  .btn-light{background:var(--paper);color:var(--navy);border:1px solid var(--paper);}
+  .btn-light:hover{background:var(--gold-lift);border-color:var(--gold-lift);color:var(--navy);}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+  /* ---- the thread: continuity spine ---- */
+  .spine{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--line);}
+  .spine::after{
+    content:"";position:absolute;left:0;top:0;width:1px;height:100%;
+    background:var(--gold);transform-origin:top;transform:scaleY(var(--draw,0));
+    transition:transform .12s linear;
+  }
+  .threaded{position:relative;padding-left:clamp(1.4rem,4vw,3.2rem);}
+  .node{position:relative;}
+  .node::before{
+    content:"";position:absolute;left:calc(-1 * clamp(1.4rem,4vw,3.2rem) - 3.5px);top:.62em;
+    width:8px;height:8px;border-radius:50%;background:var(--paper);border:1px solid var(--gold);
+  }
+
+  /* ---- sections ---- */
+  section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .hero{padding-top:clamp(3rem,7vw,5.5rem);padding-bottom:clamp(3rem,7vw,5rem);}
+  .hero h1{max-width:15ch;}
+  .hero .lede{margin-top:1.5rem;}
+  .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem;}
+  .assure{
+    margin-top:2.2rem;padding-top:1.2rem;border-top:1px solid var(--line);
+    font-size:.9rem;color:var(--stone);max-width:46ch;
+  }
+
+  .rule{border:0;border-top:1px solid var(--line);margin:0;}
+
+  /* conditions list */
+  .conditions{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;gap:0;grid-template-columns:1fr;}
+  .conditions li{padding:1.15rem 0;border-top:1px solid var(--line);}
+  .conditions li:last-child{border-bottom:1px solid var(--line);}
+  .conditions h3{margin-bottom:.25rem;}
+  .conditions p{margin:0;font-size:.94rem;color:var(--stone);}
+  @media(min-width:38rem){
+    .conditions{grid-template-columns:1fr 1fr;column-gap:2.75rem;}
+    .conditions li:nth-last-child(2){border-bottom:1px solid var(--line);}
+  }
+
+  /* dark band */
+  .band{background:var(--navy);color:var(--paper-warm);}
+  .band h2{color:var(--paper);}
+  .band .eyebrow{color:var(--gold-lift);}
+  .band .lede{color:#AFC0D8;}
+  .band .spine{background:rgba(255,255,255,.16);}
+  .band .node::before{background:var(--navy);border-color:var(--gold-lift);}
+  .steps{list-style:none;margin:2.75rem 0 0;padding:0;display:grid;gap:2.2rem;}
+  @media(min-width:48rem){.steps{grid-template-columns:repeat(3,1fr);gap:2.75rem;}}
+  .steps h3{color:var(--paper);margin-bottom:.5rem;}
+  .steps p{color:#AFC0D8;font-size:.95rem;margin:0;}
+  .steps .when{
+    display:block;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold-lift);margin-bottom:.7rem;
+  }
+
+  /* insurance */
+  .cols{display:grid;gap:2.4rem;margin-top:2.5rem;}
+  @media(min-width:48rem){.cols{grid-template-columns:1.05fr .95fr;gap:3.5rem;}}
+  .states{display:grid;gap:0;margin-top:2.5rem;}
+  .states article{padding:1.6rem 0;border-top:1px solid var(--line);}
+  .states article:last-child{border-bottom:1px solid var(--line);}
+  .states .st{
+    display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin-bottom:.55rem;
+  }
+  .states h3{margin:0;}
+  .tag{
+    font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    padding:.22rem .55rem;border-radius:2px;white-space:nowrap;
+  }
+  .tag-in{background:var(--navy);color:var(--paper);}
+  .tag-part{background:var(--gold);color:#fff;}
+  .tag-soon{background:transparent;color:var(--stone);border:1px solid var(--line);}
+  .states p{margin:0;font-size:.94rem;color:var(--stone);max-width:62ch;}
+  @media(min-width:48rem){
+    .states{grid-template-columns:1fr 1fr;column-gap:3rem;}
+    .states article:nth-last-child(2){border-bottom:1px solid var(--line);}
+  }
+  .plans{list-style:none;margin:1.1rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem;}
+  .plans li{
+    font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--line);border-radius:2px;
+    background:#fff;color:var(--stone);
+  }
+  .note{font-size:.9rem;color:var(--stone);}
+
+  /* physician */
+  .bio{display:grid;gap:2rem;margin-top:2rem;}
+  @media(min-width:48rem){.bio{grid-template-columns:1fr 1.35fr;gap:3.5rem;align-items:start;}}
+  .creds{list-style:none;margin:1.2rem 0 0;padding:0;font-size:.88rem;color:var(--stone);}
+  .creds li{padding:.5rem 0;border-top:1px solid var(--line);}
+
+  /* faq */
+  details{border-top:1px solid var(--line);}
+  details:last-of-type{border-bottom:1px solid var(--line);}
+  summary{
+    cursor:pointer;list-style:none;padding:1.15rem 2rem 1.15rem 0;position:relative;
+    font-weight:500;font-size:1rem;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";position:absolute;right:0;top:1rem;color:var(--gold);font-size:1.25rem;line-height:1;
+  }
+  details[open] summary::after{content:"–";}
+  details p{margin:0 0 1.15rem;color:var(--stone);font-size:.95rem;max-width:62ch;}
+
+  /* concierge — deliberately quiet */
+  .concierge{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .concierge .inner{display:grid;gap:1.2rem;}
+  @media(min-width:48rem){.concierge .inner{grid-template-columns:auto 1fr;gap:3rem;align-items:center;}}
+  .concierge h2{font-size:clamp(1.4rem,2.6vw,1.75rem);}
+  .concierge p{font-size:.95rem;color:var(--stone);margin:0;max-width:56ch;}
+
+  /* contact */
+  .contact{text-align:left;}
+  .phone{
+    font-family:'Newsreader',serif;font-size:clamp(2rem,6vw,3rem);text-decoration:none;
+    display:inline-block;margin:.5rem 0 1.5rem;letter-spacing:-0.02em;
+  }
+  .phone:hover{color:var(--gold);}
+  .hours{font-size:.92rem;color:var(--stone);}
+
+  footer{background:var(--navy);color:#9DAEC6;font-size:.85rem;padding:3rem 0 2.5rem;}
+  footer a{color:#C6D5EA;}
+  .fgrid{display:grid;gap:1.75rem;margin-bottom:2rem;}
+  @media(min-width:48rem){.fgrid{grid-template-columns:1.4fr 1fr 1fr;gap:3rem;}}
+  footer h4{
+    font-family:'Archivo',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold-lift);margin:0 0 .7rem;
+  }
+  .fine{border-top:1px solid rgba(255,255,255,.14);padding-top:1.5rem;font-size:.76rem;line-height:1.6;color:#8395AF;}
+  .fine p{margin:0 0 .7rem;}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .orb-front,.orb-back{animation:none;}
+    .orb-back{opacity:0;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .spine::after{transform:scaleY(1);transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Convenient Care Solutions — home">
+      <svg class="logo" viewBox="-6 -6 76 76" role="img" aria-hidden="true" style="color:var(--navy)">
+        <!-- ring behind the C -->
+        <g transform="rotate(-15 32 32)">
+          <path class="orbit-ring" d="M -2,32 A 34,14 0 0 1 66,32"/>
+          <path class="orb orb-back" d="M0,-5.4 C0.7,-2 2,-0.7 5.4,0 C2,0.7 0.7,2 0,5.4 C-0.7,2 -2,0.7 -5.4,0 C-2,-0.7 -0.7,-2 0,-5.4 Z" fill="var(--gold-lift)"/>
+        </g>
+        <path d="M44.9 16.7 A20 20 0 1 0 44.9 47.3" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+        <!-- ring crossing in front, plus the star -->
+        <g transform="rotate(-15 32 32)">
+          <path class="orbit-ring" d="M -2,32 A 34,14 0 0 0 66,32"/>
+          <path class="orb orb-front" d="M0,-5.4 C0.7,-2 2,-0.7 5.4,0 C2,0.7 0.7,2 0,5.4 C-0.7,2 -2,0.7 -5.4,0 C-2,-0.7 -0.7,-2 0,-5.4 Z" fill="var(--gold-lift)"/>
+        </g>
+      </svg>
+      <span style="color:var(--navy)">Convenient Care <span style="color:var(--gold)">Solutions</span></span>
+    </a>
+    <a class="btn btn-solid" href="tel:13308629127">Call or text</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="threaded"><div class="spine"></div>
+        <div class="node reveal">
+          <span class="eyebrow">Video visits in Ohio, Illinois, Florida &amp; Pennsylvania</span>
+          <h1>Steady care for the conditions you live with.</h1>
+          <p class="lede">Blood pressure, diabetes, thyroid, cholesterol, sleep apnea — managed month to month by one board-certified physician who follows your numbers between visits, not just at them.</p>
+          <div class="actions">
+            <a class="btn btn-solid" href="tel:13308629127">Call or text 330-862-9127</a>
+            <a class="btn btn-ghost" href="#insurance">Check your insurance</a>
+          </div>
+          <p class="assure">In-network with Medicare, Medicaid and most major Ohio plans, and with Medicare in Florida. You pay your normal copay — we handle the billing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- WHAT WE MANAGE -->
+  <section id="conditions">
+    <div class="wrap">
+      <div class="threaded"><div class="spine"></div>
+        <div class="node reveal">
+          <span class="eyebrow">What we manage</span>
+          <h2>Long-term conditions, handled long-term.</h2>
+        </div>
+        <ul class="conditions reveal">
+          <li>
+            <h3>Blood pressure</h3>
+            <p>Hypertension monitored with home readings reviewed by your physician, with medication adjusted as your numbers move.</p>
+          </li>
+          <li>
+            <h3>Diabetes &amp; prediabetes</h3>
+            <p>A1c, glucose trends, medication and the day-to-day habits that move them.</p>
+          </li>
+          <li>
+            <h3>Sleep apnea &amp; insomnia</h3>
+            <p>Board-certified sleep medicine, including home sleep testing and CPAP follow-through.</p>
+          </li>
+          <li>
+            <h3>Thyroid &amp; hormones</h3>
+            <p>Thyroid disease, low testosterone, menopause and persistent fatigue — worked up with labs, not guesswork.</p>
+          </li>
+          <li>
+            <h3>Cholesterol &amp; heart risk</h3>
+            <p>Lipids, cardiac risk and the medications that reduce it, tracked over years rather than visits.</p>
+          </li>
+          <li>
+            <h3>Weight &amp; metabolic health</h3>
+            <p>Physician-supervised weight management, including medication when it's clinically appropriate.</p>
+          </li>
+        </ul>
+        <p class="note reveal" style="margin-top:1.6rem;">We also handle everyday primary care — annual visits, refills, referrals, and the acute problems that come up along the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW ONGOING CARE WORKS (dark band) -->
+  <section class="band" id="how">
+    <div class="wrap">
+      <div class="threaded"><div class="spine"></div>
+        <div class="node reveal">
+          <span class="eyebrow">How ongoing care works</span>
+          <h2>Most of the work happens between appointments.</h2>
+          <p class="lede">Chronic conditions don't wait for your next opening. Here's the rhythm of care once you're established.</p>
+        </div>
+        <ol class="steps reveal">
+          <li>
+            <span class="when">First visit</span>
+            <h3>A full picture</h3>
+            <p>We review your history, medications and labs, then set a plan with specific targets — in the Canfield office or by video, whichever is easier.</p>
+          </li>
+          <li>
+            <span class="when">Between visits</span>
+            <h3>Numbers we can see</h3>
+            <p>Where it helps, you take blood pressure, weight or glucose readings at home on a device we provide. Your physician reviews them and reaches out when something needs attention.</p>
+          </li>
+          <li>
+            <span class="when">Every month</span>
+            <h3>Someone checking in</h3>
+            <p>Regular follow-up, refills before you run out, labs ordered on schedule, and specialist referrals coordinated for you. Covered by Medicare and most plans.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section id="insurance">
+    <div class="wrap">
+      <div class="threaded"><div class="spine"></div>
+        <div class="node reveal">
+          <span class="eyebrow">Insurance</span>
+          <h2>Use your plan. Pay your copay.</h2>
+        </div>
+        <div class="states reveal">
+          <article>
+            <div class="st"><h3>Ohio</h3><span class="tag tag-in">In-network</span></div>
+            <p>We bill your plan directly, so a covered visit costs you your usual copay or deductible — nothing more. In-office in Canfield or by video.</p>
+            <ul class="plans">
+              <li>Medicare</li><li>Ohio Medicaid</li><li>Aetna</li><li>Anthem BC/BS</li>
+              <li>UnitedHealthcare</li><li>Humana</li><li>Cigna</li><li>Medical Mutual</li>
+              <li>CareSource</li><li>Buckeye</li><li>Molina (soon)</li>
+            </ul>
+          </article>
+          <article>
+            <div class="st"><h3>Florida</h3><span class="tag tag-part">Medicare</span></div>
+            <p>We're currently enrolled with Medicare in Florida and bill it directly for covered visits. Commercial plans aren't contracted yet — those visits are private-pay for now, with a superbill you can submit to your insurer.</p>
+          </article>
+          <article>
+            <div class="st"><h3>Illinois</h3><span class="tag tag-soon">Private pay</span></div>
+            <p>Illinois visits are private-pay. We'll tell you the cost before you book and provide an itemized superbill you may submit to your own insurer for possible out-of-network reimbursement.</p>
+          </article>
+          <article>
+            <div class="st"><h3>Pennsylvania</h3><span class="tag tag-soon">Private pay &middot; contracting</span></div>
+            <p>Pennsylvania visits are private-pay while plan contracting is underway. Same flat, quoted-in-advance pricing, and a superbill on request.</p>
+          </article>
+        </div>
+        <div class="cols reveal" style="margin-top:2.4rem;">
+          <div>
+            <h3 style="margin-bottom:.6rem;">Not sure where you land?</h3>
+            <p class="note">Call or text and we'll verify your coverage and tell you exactly how your visit will be billed — before you commit to anything.</p>
+            <a class="btn btn-ghost" style="margin-top:.6rem;" href="tel:13308629127">Verify my coverage</a>
+          </div>
+          <div>
+            <h3 style="margin-bottom:.6rem;">Referring a patient?</h3>
+            <p class="note">We accept referrals from other practices and home health agencies across all four states. Fax records to 330-663-5726 or call the office directly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- PHYSICIAN -->
+  <section id="physician">
+    <div class="wrap">
+      <div class="threaded"><div class="spine"></div>
+        <div class="node reveal">
+          <span class="eyebrow">Your physician</span>
+          <h2>Joseph Cataline, M.D.</h2>
+        </div>
+        <div class="bio reveal">
+          <div>
+            <ul class="creds">
+              <li>Board-certified, Internal Medicine</li>
+              <li>Board-certified, Sleep Medicine</li>
+              <li>Residency — Cleveland Clinic</li>
+              <li>Fellowship — Rush University</li>
+              <li>Licensed in OH, IL, FL &amp; PA</li>
+            </ul>
+          </div>
+          <div>
+            <p>Dr. Cataline is dual board-certified in internal medicine and sleep medicine. He built this practice around the kind of care chronic conditions actually require: the same physician every time, enough time to think, and follow-up that doesn't depend on you chasing it.</p>
+            <p style="margin-bottom:0;">Patients are seen in the Canfield office or by video, and referrals from other practices and home health agencies are welcome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="threaded"><div class="spine"></div>
+        <div class="node reveal">
+          <span class="eyebrow">Good to know</span>
+          <h2>Questions, answered.</h2>
+        </div>
+        <div class="reveal" style="margin-top:2rem;">
+          <details>
+            <summary>Do you take my insurance?</summary>
+            <p>In Ohio, most likely — we're in-network with Medicare, Ohio Medicaid and most major commercial plans. In Florida we're enrolled with Medicare and bill it directly. Illinois and Pennsylvania visits are private-pay for now while contracting is underway. Call or text and we'll verify your specific plan before you book.</p>
+          </details>
+          <details>
+            <summary>Can I be seen in person?</summary>
+            <p>Yes. We see patients at our Canfield office at 3695 Boardman Canfield Dr, Building B, and by video for anyone located in Ohio, Illinois, Florida or Pennsylvania. Many patients do a mix of both.</p>
+          </details>
+          <details>
+            <summary>How does the home monitoring work?</summary>
+            <p>For conditions like hypertension and diabetes, we can provide a connected blood pressure cuff, scale or glucometer. Your readings come to us automatically, your physician reviews them, and we contact you if something needs adjusting. It's a covered benefit under Medicare and most plans.</p>
+          </details>
+          <details>
+            <summary>How soon can I be seen?</summary>
+            <p>Often the same or next day. Evening and weekend appointments are available. If the times listed don't work, reach out — we can usually arrange something.</p>
+          </details>
+          <details>
+            <summary>Can you prescribe medication?</summary>
+            <p>Yes, when it's clinically appropriate. After evaluating you, your physician can send prescriptions to your pharmacy. Certain medications carry additional rules and may require an in-person visit.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCIERGE — quiet, near the bottom, no pricing -->
+  <section class="concierge" id="concierge">
+    <div class="wrap inner">
+      <div>
+        <span class="eyebrow" style="margin-bottom:.5rem;">Also available</span>
+        <h2>Concierge care</h2>
+      </div>
+      <div>
+        <p>For a limited number of patients, we offer a membership with direct access to Dr. Cataline, priority scheduling and a deeper annual evaluation. Details and availability on request — <a href="tel:13308629127">call or text 330-862-9127</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="threaded"><div class="spine"></div>
+        <div class="node reveal">
+          <span class="eyebrow">Get started</span>
+          <h2>One call is usually all it takes.</h2>
+          <p class="lede" style="margin-top:1.2rem;">Tell us what's going on. We'll verify your insurance, find you a time, and get your records where they need to be.</p>
+          <a class="phone" href="tel:13308629127">330-862-9127</a>
+          <div class="actions" style="margin-top:0;">
+            <a class="btn btn-solid" href="tel:13308629127">Call now</a>
+            <a class="btn btn-ghost" href="sms:13308629127">Send a text</a>
+          </div>
+          <p class="hours" style="margin-top:2rem;">
+            <strong>Hours (EST)</strong> — Mon–Fri 5–9 PM &middot; Sat 8 AM–5 PM &middot; Sun by appointment.<br>
+            Calls and texts are typically answered the same day. Please don't include private medical details in a text.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <svg class="logo logo-lg" viewBox="-6 -6 76 76" role="img" aria-hidden="true" style="color:#C6D5EA">
+          <!-- ring behind the C -->
+          <g transform="rotate(-15 32 32)">
+            <path class="orbit-ring" d="M -2,32 A 34,14 0 0 1 66,32"/>
+            <path class="orb orb-back" d="M0,-5.4 C0.7,-2 2,-0.7 5.4,0 C2,0.7 0.7,2 0,5.4 C-0.7,2 -2,0.7 -5.4,0 C-2,-0.7 -0.7,-2 0,-5.4 Z" fill="var(--gold-lift)"/>
+          </g>
+          <path d="M44.9 16.7 A20 20 0 1 0 44.9 47.3" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+          <!-- ring crossing in front, plus the star -->
+          <g transform="rotate(-15 32 32)">
+            <path class="orbit-ring" d="M -2,32 A 34,14 0 0 0 66,32"/>
+            <path class="orb orb-front" d="M0,-5.4 C0.7,-2 2,-0.7 5.4,0 C2,0.7 0.7,2 0,5.4 C-0.7,2 -2,0.7 -5.4,0 C-2,-0.7 -0.7,-2 0,-5.4 Z" fill="var(--gold-lift)"/>
+          </g>
+        </svg>
+        <h4>Convenient Care Solutions</h4>
+        <p>Physician-led primary and chronic care — in the Canfield office and by video for residents of Ohio, Illinois, Florida and Pennsylvania.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:13308629127">330-862-9127</a> (call or text)<br>
+          Fax 330-663-5726 (referrals)<br>
+          <a href="https://maps.google.com/?q=3695+Boardman+Canfield+Dr+Building+B+Canfield+OH+44406">3695 Boardman Canfield Dr, Bldg B<br>Canfield, OH 44406</a>
+        </p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon–Fri 5–9 PM EST<br>Saturday 8 AM–5 PM EST<br>Sunday by appointment</p>
+      </div>
+    </div>
+    <div class="fine">
+      <p>
+        <a href="/privacy">Privacy / HIPAA Notice</a> &middot;
+        <a href="/terms">Patient Service Agreement &amp; Terms</a> &middot;
+        <a href="/telehealth-consent">Telehealth Consent</a>
+      </p>
+      <p>Convenient Care Solutions is not an emergency service. If you are experiencing a medical emergency, call 911 or go to the nearest emergency room.</p>
+      <p>This page is general information and does not constitute medical advice or create a physician–patient relationship. Concierge membership is a direct-care arrangement and is not health insurance. Telehealth is available only to patients located in states where the physician is licensed (Ohio, Illinois, Florida and Pennsylvania). Insurance participation varies by state.</p>
+      <p>&copy; <span id="yr">2026</span> Convenient Care Solutions (JRCNMC Holdings LLC). All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // Continuity thread: each spine draws as its section passes through the viewport
+  var spines = Array.prototype.slice.call(document.querySelectorAll('.threaded'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function draw(){
+    var vh = window.innerHeight;
+    spines.forEach(function(t){
+      var r = t.getBoundingClientRect();
+      var p = (vh * 0.82 - r.top) / r.height;
+      t.style.setProperty('--draw', Math.max(0, Math.min(1, p)).toFixed(3));
+    });
+  }
+  if(!reduce){
+    draw();
+    window.addEventListener('scroll', function(){ window.requestAnimationFrame(draw); }, {passive:true});
+    window.addEventListener('resize', draw);
+  }
+</script>
+</body>
+</html>
