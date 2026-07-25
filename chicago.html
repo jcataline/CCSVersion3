@@ -1,0 +1,647 @@
+
+<!--
+  CONVENIENT CARE SOLUTIONS — DIRECT CARE / SELF-PAY + CONCIERGE PAGE
+  Conversion-optimized for paid ad traffic (Google Search / Meta). Mobile-first.
+
+  Prices are set ($99 / $159 / $249 per-visit; $250 + $500/mo concierge tiers). To change later, update them
+  in three places per file: the hero price card, the three pricing tiers, and the concierge box.
+  Booking = call/text only. All CTAs point to tel:13308629127 (Call) or sms:13308629127 (Text).
+  If you ever add a scheduler later, repoint those tel:/sms: links to its URL.
+
+  NOTE: No email / intake form by design — the funnel is call/text so the office controls
+  qualification (OH vs IL, insurance vs self-pay) before scheduling, and no PHI is collected on-page.
+
+  AD TIP: point each ad to a version of this page whose headline MATCHES the ad
+  (e.g. "Same-Day Sleep Visit" ad -> hero headline about sleep). Message-match lifts conversion a lot.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Telehealth for Chicago & the Suburbs — Doctor Visits from $99 | Convenient Care Solutions</title>
+<meta name="description" content="Concierge-style telehealth for Chicago and the suburbs. A board-certified physician, unhurried visits, transparent self-pay pricing from $99 — no insurance hassle, no waiting room.">
+<meta name="geo.region" content="US-IL">
+<meta name="geo.placename" content="Chicago, Illinois">
+<link rel="canonical" href="https://www.convenientcaresolutions.com/chicago">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Convenient Care Solutions",
+  "description": "Concierge-style telehealth for Chicago and the suburbs from a board-certified physician. Transparent self-pay pricing from $99.",
+  "url": "https://www.convenientcaresolutions.com/chicago",
+  "telephone": "+1-330-862-9127",
+  "priceRange": "$99–$249",
+  "areaServed": [
+    {"@type":"State","name":"Illinois"},
+    {"@type":"City","name":"Chicago"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#182241;   /* brand darkest navy */
+    --teal-800:#213C4E;   /* brand primary navy */
+    --teal-700:#284857;   /* mid-dark (gradients) */
+    --teal-600:#365360;   /* lighter navy (gradient tops) */
+    --teal-500:#536C7C;   /* brand slate — icons & small accents */
+    --teal-tint:#e6ecef;  /* light slate tint */
+    --cream:#FFFDF8;      /* brand cream */
+    --sand:#f4f1ea;       /* deeper cream for alternating sections */
+    --clay:#213C4E;       /* CTA = brand navy (monochrome / executive) */
+    --clay-dark:#182241;
+    --clay-soft:#e6ecef;
+    --honey:#b7c3c9;      /* light slate — understated accent on navy */
+    --ink:#1b2738;        /* deep navy body text */
+    --muted:#5d6b74;      /* muted slate-gray text */
+    --line:#e4e0d6;       /* hairline on cream */
+    --r:16px;
+    --shadow:0 24px 60px -28px rgba(24,34,65,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hanken Grotesk',sans-serif;background:var(--cream);color:var(--ink);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;line-height:1.04;
+    letter-spacing:-.02em;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--clay-dark)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:'Hanken Grotesk';font-weight:600;font-size:.95rem;cursor:pointer;border:none;
+    border-radius:100px;transition:.3s ease;white-space:nowrap}
+  .btn-cta{background:var(--clay);color:#fff;padding:15px 30px}
+  .btn-cta:hover{background:var(--clay-dark);transform:translateY(-2px);
+    box-shadow:0 14px 28px -10px rgba(200,85,46,.6)}
+  .btn-teal{background:var(--teal-700);color:#fff;padding:15px 30px}
+  .btn-teal:hover{background:var(--teal-800);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--teal-800);border:1.5px solid var(--line);
+    padding:14px 28px}
+  .btn-ghost:hover{border-color:var(--teal-600);background:var(--teal-tint)}
+  .btn-light{background:#fff;color:var(--teal-800);padding:15px 30px}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-outline-light{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:15px 30px}
+  .btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:100;background:rgba(251,250,246,.9);
+    backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.35s}
+  header.site.scrolled{border-color:var(--line);box-shadow:0 2px 20px -12px rgba(7,46,44,.3)}
+  .head-in{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Bricolage Grotesque';
+    font-weight:700;font-size:1.18rem;color:var(--teal-800);letter-spacing:-.02em}
+  .brand .mk{width:34px;height:34px;flex:none}
+  .head-actions{display:flex;align-items:center;gap:16px}
+  .head-phone{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--teal-800);
+    font-size:.98rem}
+  .head-phone svg{color:var(--clay)}
+
+  /* hero */
+  .hero{background:radial-gradient(120% 100% at 85% -10%,var(--teal-600),var(--teal-800) 55%,var(--teal-900));
+    color:#fff;position:relative;overflow:hidden;padding:64px 0 76px}
+  .hero::after{content:"";position:absolute;right:-8%;top:-30%;width:55%;height:140%;
+    background:radial-gradient(circle,rgba(120,142,149,.10),transparent 60%);pointer-events:none}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;
+    gap:54px;align-items:center}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4rem);color:#fff;margin:18px 0 18px;font-weight:700}
+  .hero h1 .price{color:var(--honey)}
+  .hero .sub{font-size:1.1rem;color:rgba(255,255,255,.85);max-width:30em;margin-bottom:18px;font-weight:300}
+  .hero .ticks{display:flex;flex-wrap:wrap;gap:9px 20px;margin-bottom:30px}
+  .hero .ticks span{display:flex;align-items:center;gap:8px;font-size:.92rem;color:rgba(255,255,255,.9)}
+  .hero .ticks svg{color:var(--honey);flex:none}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-fine{margin-top:16px;font-size:.84rem;color:rgba(255,255,255,.62)}
+
+  /* hero price card */
+  .pcard{background:#fff;border-radius:20px;padding:28px;box-shadow:var(--shadow);color:var(--ink)}
+  .pcard .ph{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-dark);
+    font-weight:700;margin-bottom:14px}
+  .pcard .prow{display:flex;justify-content:space-between;align-items:baseline;
+    padding:13px 0;border-bottom:1px dashed var(--line)}
+  .pcard .prow:last-of-type{border-bottom:none}
+  .pcard .prow .lab{font-weight:500}
+  .pcard .prow .lab small{display:block;font-size:.78rem;color:var(--muted);font-weight:400}
+  .pcard .prow .amt{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.35rem;color:var(--teal-700)}
+  .pcard .btn{width:100%;margin-top:18px}
+
+  /* trust bar */
+  .trustbar{background:var(--teal-900);color:rgba(255,255,255,.85)}
+  .trustbar .wrap{display:flex;flex-wrap:wrap;justify-content:space-around;gap:14px;
+    padding:18px 24px;font-size:.86rem;text-align:center}
+  .trustbar span{display:flex;align-items:center;gap:9px}
+  .trustbar b{color:var(--honey)}
+  .trustbar svg{color:var(--honey)}
+
+  section{padding:90px 0}
+  .sec-head{max-width:44em;margin:0 auto 50px;text-align:center}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.9rem);color:var(--teal-800);margin:14px 0 14px}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+
+  /* pricing */
+  .pricing{background:var(--cream)}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .tier{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;
+    display:flex;flex-direction:column;transition:.35s;position:relative}
+  .tier:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:var(--teal-tint)}
+  .tier.pop{border:2px solid var(--clay)}
+  .tier .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--clay);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;padding:5px 14px;border-radius:100px}
+  .tier .tname{font-family:'Bricolage Grotesque';font-weight:600;font-size:1.2rem;color:var(--teal-800)}
+  .tier .tlen{font-size:.86rem;color:var(--muted);margin-bottom:16px}
+  .tier .tamt{font-family:'Bricolage Grotesque';font-weight:700;font-size:2.6rem;color:var(--teal-700);line-height:1}
+  .tier .tamt small{font-size:.95rem;color:var(--muted);font-weight:400}
+  .tier .tfor{font-size:.9rem;color:var(--ink);margin:14px 0 16px;font-weight:500}
+  .tier ul{list-style:none;display:grid;gap:10px;margin-bottom:24px;flex:1}
+  .tier li{display:flex;gap:9px;font-size:.9rem;color:var(--muted);align-items:flex-start}
+  .tier li svg{flex:none;margin-top:4px;color:var(--teal-500)}
+  .tier .btn{width:100%}
+
+  /* concierge band — two-tier membership */
+  .concierge{background:linear-gradient(150deg,var(--teal-700),var(--teal-900));color:#fff;
+    border-radius:var(--r);padding:clamp(28px,4vw,48px);margin-top:24px;box-shadow:var(--shadow)}
+  .cintro{text-align:center;max-width:46em;margin:0 auto 34px}
+  .concierge h3{font-size:clamp(1.6rem,3vw,2rem);color:#fff;margin:10px 0 12px}
+  .cintro p{color:rgba(255,255,255,.82);font-weight:300;margin:0}
+  .ctiers{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+  .ccard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+    border-radius:16px;padding:30px;display:flex;flex-direction:column;position:relative}
+  .ccard.exec{background:rgba(255,255,255,.12);border-color:var(--honey);
+    box-shadow:0 18px 40px -24px rgba(0,0,0,.55)}
+  .cbadge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--honey);color:var(--teal-900);font-family:'Hanken Grotesk';font-weight:700;
+    font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;
+    border-radius:100px;white-space:nowrap}
+  .cname{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.5rem;color:#fff}
+  .ctag{color:rgba(255,255,255,.75);font-size:.92rem;font-weight:300;margin:6px 0 18px}
+  .ccard .amt{font-family:'Bricolage Grotesque';font-weight:700;font-size:2.6rem;color:var(--honey)}
+  .ccard .per{font-size:.84rem;color:rgba(255,255,255,.7);margin-bottom:18px}
+  .cplus{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--honey);margin-bottom:14px}
+  .clist{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:12px}
+  .clist li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;
+    color:rgba(255,255,255,.92);line-height:1.45}
+  .clist svg{color:var(--honey);flex:none;margin-top:3px}
+  .ccard .btn{margin-top:auto;width:100%}
+  @media(max-width:720px){.ctiers{grid-template-columns:1fr}}
+  .price-disc{text-align:center;color:var(--muted);font-size:.86rem;margin-top:26px;max-width:50em;margin-left:auto;margin-right:auto}
+
+  /* billing transparency */
+  .billing{background:var(--sand)}
+  .bill-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:14px}
+  .bill-card{background:#fff;border-radius:var(--r);padding:32px;border:1px solid var(--line)}
+  .bill-card .ic{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;
+    background:var(--teal-tint);color:var(--teal-700);margin-bottom:16px}
+  .bill-card.cash .ic{background:var(--clay-soft);color:var(--clay-dark)}
+  .bill-card h4{font-size:1.25rem;color:var(--teal-800);margin-bottom:10px}
+  .bill-card p{color:var(--muted);font-size:.96rem}
+  .bill-note{background:#fff;border-left:3px solid var(--honey);border-radius:10px;
+    padding:18px 22px;margin-top:24px;font-size:.92rem;color:var(--ink)}
+  .bill-note b{color:var(--teal-800)}
+
+  /* services */
+  .services{background:var(--cream)}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:.3s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal-tint)}
+  .svc .ic{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;
+    background:var(--teal-tint);color:var(--teal-700);margin-bottom:14px}
+  .svc h4{font-size:1.05rem;color:var(--teal-800);margin-bottom:6px}
+  .svc p{font-size:.86rem;color:var(--muted)}
+
+  /* how */
+  .how{background:var(--teal-800);color:#fff}
+  .how .sec-head h2{color:#fff}.how .sec-head p{color:rgba(255,255,255,.75)}
+  .hsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .hstep{text-align:center;padding:0 10px}
+  .hstep .n{width:54px;height:54px;border-radius:50%;background:var(--teal-500);color:#fff;
+    font-family:'Bricolage Grotesque';font-weight:700;font-size:1.4rem;display:grid;
+    place-items:center;margin:0 auto 16px}
+  .hstep h4{font-size:1.2rem;color:#fff;margin-bottom:8px}
+  .hstep p{color:rgba(255,255,255,.78);font-size:.94rem;font-weight:300}
+  .how .btn{margin:40px auto 0;display:flex;width:fit-content}
+
+  /* about */
+  .about{background:var(--sand)}
+  .about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;align-items:center}
+  .about-photo{aspect-ratio:1;border-radius:var(--r);background:
+    linear-gradient(150deg,var(--teal-600),var(--teal-900));display:grid;place-items:center;
+    color:rgba(255,255,255,.5);font-family:'Bricolage Grotesque';text-align:center;
+    box-shadow:var(--shadow);font-size:.85rem;letter-spacing:.12em}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:var(--r)}
+  .about h2{font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--teal-800);margin:12px 0 16px}
+  .about p{color:var(--muted);margin-bottom:14px}
+  .creds{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+  .cred{font-size:.8rem;border:1px solid var(--line);background:#fff;border-radius:100px;
+    padding:7px 15px;color:var(--teal-700);font-weight:500}
+
+  /* faq */
+  .faq{background:var(--cream)}
+  .faq-grid{max-width:780px;margin:0 auto}
+  .qa{border-bottom:1px solid var(--line)}
+  .qa button{width:100%;background:none;border:none;cursor:pointer;text-align:left;
+    padding:22px 0;display:flex;justify-content:space-between;gap:18px;align-items:center;
+    font-family:'Bricolage Grotesque';font-weight:600;font-size:1.1rem;color:var(--teal-800)}
+  .qa .plus{flex:none;width:24px;height:24px;position:relative;transition:.35s}
+  .qa .plus::before,.qa .plus::after{content:"";position:absolute;background:var(--clay);
+    top:50%;left:50%;transform:translate(-50%,-50%);transition:.35s}
+  .qa .plus::before{width:13px;height:2px}
+  .qa .plus::after{width:2px;height:13px}
+  .qa.open .plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .qa .ans p{padding:0 0 22px;color:var(--muted)}
+
+  /* final cta */
+  .final{background:linear-gradient(150deg,var(--teal-700),var(--teal-900));color:#fff;
+    position:relative;overflow:hidden}
+  .final::after{content:"";position:absolute;left:-10%;bottom:-40%;width:50%;height:130%;
+    background:radial-gradient(circle,rgba(120,142,149,.10),transparent 60%)}
+  .final-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .final h2{font-size:clamp(2rem,4vw,3rem);color:#fff;margin:14px 0 16px}
+  .final p{color:rgba(255,255,255,.82);margin-bottom:22px;font-weight:300}
+  .final .ccall{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+  .final .ccall a{display:flex;gap:11px;align-items:center;font-size:1.05rem;color:#fff;font-weight:500}
+  .final .ccall svg{color:var(--honey);flex:none}
+  .form-card{background:#fff;border-radius:var(--r);padding:32px;color:var(--ink)}
+  .form-card h3{color:var(--teal-800);font-size:1.35rem;margin-bottom:6px}
+  .form-card .fsub{font-size:.9rem;color:var(--muted);margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.78rem;font-weight:600;color:var(--teal-800);margin-bottom:6px}
+  .field input,.field select{width:100%;border:1px solid var(--line);border-radius:10px;
+    padding:12px 14px;font-family:'Hanken Grotesk';font-size:.95rem;color:var(--ink);
+    background:var(--cream);transition:.25s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--teal-500);background:#fff}
+  .form-card .btn{width:100%;margin-top:6px}
+  .form-note{font-size:.76rem;color:var(--muted);margin-top:12px;text-align:center}
+  .bookphone{display:inline-block;font-family:'Bricolage Grotesque';font-weight:700;
+    font-size:2.3rem;color:var(--teal-800);letter-spacing:-.02em;margin-top:6px}
+  .bookphone:hover{color:var(--clay-dark)}
+
+  /* footer */
+  footer{background:var(--teal-900);color:rgba(255,255,255,.62);padding:50px 0 30px}
+  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;
+    padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.3rem;color:#fff;margin-bottom:10px}
+  .foot-contact a{display:block;margin-bottom:7px;font-size:.92rem}
+  .foot-contact a:hover{color:var(--honey)}
+  .foot-hours{font-size:.9rem;line-height:1.9}
+  .foot-hours h5{color:var(--honey);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  .foot-bottom{padding-top:22px;font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.42);max-width:60em}
+  .foot-bottom .em{color:rgba(255,255,255,.7);font-weight:600}
+
+  /* sticky mobile CTA */
+  .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
+    background:#fff;box-shadow:0 -6px 24px -8px rgba(7,46,44,.3);padding:10px 14px;
+    gap:10px;border-top:1px solid var(--line)}
+  .mobile-cta a{flex:1;text-align:center}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:.8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  [data-d="1"]{transition-delay:.07s}[data-d="2"]{transition-delay:.14s}
+  [data-d="3"]{transition-delay:.21s}[data-d="4"]{transition-delay:.28s}
+
+  @media(max-width:900px){
+    .hero-grid,.bill-grid,.about-grid,.final-grid,.concierge{grid-template-columns:1fr;gap:32px}
+    .tiers,.hsteps{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .head-phone span{display:none}
+    section{padding:64px 0}
+    .mobile-cta{display:flex}
+    body{padding-bottom:68px}
+    .concierge{padding:32px}
+  }
+  @media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- header -->
+<header class="site" id="head">
+  <div class="wrap head-in">
+    <a href="#top" class="brand">
+      <svg class="mk" viewBox="0 0 40 40" fill="none"><rect x="1" y="1" width="38" height="38" rx="11" stroke="#213C4E" stroke-width="1.6"/><path d="M20 11v18M11 20h18" stroke="#536C7C" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Convenient Care Solutions
+    </a>
+    <div class="head-actions">
+      <a href="tel:13308629127" class="head-phone"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="1.7"/></svg><span>330-862-9127</span></a>
+      <a href="tel:13308629127" class="btn btn-cta" style="padding:11px 22px">Call to Book</a>
+    </div>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow" style="color:var(--honey)">Private Telehealth · Chicago &amp; Suburbs</div>
+      <h1>Your own physician —<br>on your schedule, from <span class="price">$99</span>.</h1>
+      <p class="sub">Concierge-level care for Chicago and the suburbs, without the concierge runaround. A board-certified physician by video, unhurried visits, and transparent self-pay pricing — no insurance hassle, no waiting room, no rotating providers.</p>
+      <div class="ticks">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Same / next-day visits</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Prescriptions when appropriate</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Insurance in Ohio · Self-pay anywhere</span>
+      </div>
+      <div class="hero-cta">
+        <a href="tel:13308629127" class="btn btn-light"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="1.7"/></svg>Call or Text 330-862-9127</a>
+        <a href="#pricing" class="btn btn-outline-light">View Pricing</a>
+      </div>
+      <p class="hero-fine">Video visits for residents of Ohio &amp; Illinois · Not for medical emergencies — call 911</p>
+    </div>
+    <!-- PRICE: hero price card -->
+    <div class="pcard">
+      <div class="ph">Transparent Self-Pay Pricing</div>
+      <div class="prow"><div class="lab">Quick visit <small>15 min · acute &amp; simple</small></div><div class="amt">$99</div></div>
+      <div class="prow"><div class="lab">Standard visit <small>~30 min · new or ongoing issue</small></div><div class="amt">$159</div></div>
+      <div class="prow"><div class="lab">Comprehensive <small>45–60 min · complex / multi-issue</small></div><div class="amt">$249</div></div>
+      <a href="#pricing" class="btn btn-teal">See What's Included</a>
+    </div>
+  </div>
+</section>
+
+<!-- trust bar -->
+<div class="trustbar">
+  <div class="wrap">
+    <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m12 2 2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21l2.3-7.4-6-4.6h7.6L12 2Z" fill="currentColor"/></svg><b>Dual Board-Certified</b> Physician</span>
+    <span>Trained at <b>Cleveland Clinic</b> &amp; <b>Rush</b></span>
+    <span><b>Upfront</b> Pricing — No Surprises</span>
+    <span><b>Evenings &amp; Weekends</b> Available</span>
+  </div>
+</div>
+
+<!-- pricing -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Simple, Honest Pricing</div>
+      <h2>Pay by visit. Pay by what you actually need.</h2>
+      <p>No memberships required. Choose the visit that fits your concern — you'll always know the price before you book. Ohio patients can use in-network insurance instead; Illinois visits are simple self-pay (see below).</p>
+    </div>
+    <!-- PRICE: visit tiers ($99 / $159 / $249) -->
+    <div class="tiers">
+      <div class="tier reveal" data-d="1">
+        <div class="tname">Quick Visit</div>
+        <div class="tlen">15 minutes</div>
+        <div class="tamt">$99</div>
+        <div class="tfor">Simple, single issues</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Colds, flu, sinus, sore throat</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>UTIs, rashes, minor infections</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Quick refills &amp; simple questions</li>
+        </ul>
+        <a href="tel:13308629127" class="btn btn-ghost">Call to Book</a>
+      </div>
+      <div class="tier pop reveal" data-d="2">
+        <div class="badge">Most Booked</div>
+        <div class="tname">Standard Visit</div>
+        <div class="tlen">~30 minutes</div>
+        <div class="tamt">$159</div>
+        <div class="tfor">A new problem or ongoing care</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>New symptoms needing a real workup</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Blood pressure, thyroid, cholesterol</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mood, focus &amp; sleep concerns</li>
+        </ul>
+        <a href="tel:13308629127" class="btn btn-cta">Call to Book</a>
+      </div>
+      <div class="tier reveal" data-d="3">
+        <div class="tname">Comprehensive</div>
+        <div class="tlen">45–60 minutes</div>
+        <div class="tamt">$249</div>
+        <div class="tfor">Complex or multiple issues</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Full metabolic / hormonal evaluation</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Multiple chronic conditions</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>In-depth review &amp; care plan</li>
+        </ul>
+        <a href="tel:13308629127" class="btn btn-ghost">Call to Book</a>
+      </div>
+    </div>
+
+    <!-- concierge / membership : two tiers -->
+    <div class="concierge reveal">
+      <div class="cintro">
+        <div class="eyebrow" style="color:var(--honey)">Private Membership Care</div>
+        <h3>A physician who is genuinely yours.</h3>
+        <p>Direct, unhurried care from one board-certified physician who actually knows you — not a rotating cast and a portal that never answers. Two levels of membership, offered to a limited number of patients.</p>
+      </div>
+      <div class="ctiers">
+
+        <!-- PRICE: Concierge ($250/mo) -->
+        <div class="ccard">
+          <div class="cname">Concierge</div>
+          <div class="ctag">A true medical home for busy professionals and families who want an ongoing relationship with their physician.</div>
+          <div class="amt">$250<small style="font-size:1rem">/mo</small></div>
+          <div class="per">billed monthly · cancel anytime</div>
+          <ul class="clist">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct text &amp; phone access to Dr. Cataline — same-day response during practice hours</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority same- or next-day video visits</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Routine visits included — no per-visit fees</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Annual comprehensive evaluation &amp; personalized care plan</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Proactive management of ongoing conditions — blood pressure, thyroid, cholesterol, sleep, weight</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Prescriptions &amp; refills handled directly — no portal runaround</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Labs, imaging &amp; specialist referrals coordinated for you</li>
+          </ul>
+          <a href="tel:13308629127" class="btn btn-light">Call or Text to Join</a>
+        </div>
+
+        <!-- PRICE: Executive ($500/mo) -->
+        <div class="ccard exec">
+          <div class="cbadge">Highest Level of Access</div>
+          <div class="cname">Executive</div>
+          <div class="ctag">Maximum access plus a deeper focus on performance, sleep, and long-term health.</div>
+          <div class="amt">$500<small style="font-size:1rem">/mo</small></div>
+          <div class="per">billed monthly · cancel anytime</div>
+          <div class="cplus">Everything in Concierge, plus</div>
+          <ul class="clist">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Dr. Cataline's personal line — direct access throughout the day, same-day response</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Extended executive physical — deep, lab-driven workup across metabolic, hormonal, cardiovascular &amp; sleep health</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized sleep &amp; metabolic optimization protocol — board-certified sleep medicine</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Quarterly in-depth reviews — not just once a year</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Advanced biomarker &amp; longevity-oriented panels, reviewed in detail with you</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Travel &amp; specialist coordination when you're away</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Optional household coverage for your family</li>
+          </ul>
+          <a href="tel:13308629127" class="btn btn-light">Call or Text to Join</a>
+        </div>
+
+      </div>
+    </div>
+    <p class="price-disc">These are our standard self-pay rates. Because some visits vary by complexity, your exact price is confirmed before your visit. Labs, imaging, and medications (if needed) are billed transparently and separately. Concierge membership is a direct-care arrangement and is not health insurance.</p>
+  </div>
+</section>
+
+<!-- billing transparency -->
+<section class="billing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">No Guessing Games</div>
+      <h2>How payment works — Ohio &amp; Illinois.</h2>
+      <p>We believe you should know what you're paying, every time. Where you live determines whether you can use insurance — here's exactly how it works.</p>
+    </div>
+    <div class="bill-grid">
+      <div class="bill-card reveal" data-d="1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h4>In Ohio? Use your insurance.</h4>
+        <p>For Ohio patients, we'll bill insurance directly. We're in-network with Medicare, Medicaid, and most major plans including Aetna, Anthem (BC/BS), UnitedHealthcare, Humana, Cigna, Medical Mutual, Caresource, and Buckeye. For covered visits, you pay only your normal copay or deductible — not the self-pay price.</p>
+      </div>
+      <div class="bill-card cash reveal" data-d="2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v10M9.5 9.2A2.5 2 0 0 1 12 8c1.4 0 2.5.7 2.5 1.6 0 2.2-5 1.2-5 3.4 0 .9 1.1 1.6 2.5 1.6a2.5 2 0 0 0 2.5-1.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h4>In Illinois, or prefer to self-pay?</h4>
+        <p>All Illinois visits are simple self-pay — we don't bill insurance in Illinois. The same applies anywhere if you're uninsured, out-of-network, or just prefer to pay privately: our flat self-pay rates above are exactly what you'll pay. No claims, no surprise bills. We can also provide an itemized superbill you may submit to your own insurer for possible out-of-network reimbursement.</p>
+      </div>
+    </div>
+    <!-- EDIT: confirm this language with your billing/compliance setup -->
+    <div class="bill-note reveal">
+      <b>A note for Ohio Medicare &amp; Medicaid patients:</b> We accept Medicare and Medicaid in Ohio. Visits covered by your plan are billed to your plan — we won't charge you a self-pay rate for a covered service. Self-pay pricing applies to services your plan doesn't cover, or where paying privately is permitted. (In Illinois, all visits are self-pay.) When you reach out, we'll tell you exactly how your specific visit will be billed before you commit to anything.
+    </div>
+  </div>
+</section>
+
+<!-- services -->
+<section class="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">What We Treat</div>
+      <h2>One physician, comprehensive care.</h2>
+      <p>From a sudden illness to long-term health goals — all by video, on your schedule.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal" data-d="1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="1.6"/></svg></div><h4>Primary Care</h4><p>Your go-to for everyday health, prevention, and coordination.</p></div>
+      <div class="svc reveal" data-d="2"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12h3l2-5 4 10 2-5h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Acute &amp; Urgent</h4><p>Infections, flu, UTIs, rashes, sinus problems — fast.</p></div>
+      <div class="svc reveal" data-d="3"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><h4>Sleep Medicine</h4><p>Apnea, insomnia, restless legs — board-certified expertise.</p></div>
+      <div class="svc reveal" data-d="4"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 8s2 2 7 2 7-2 7-2M5 16s2-2 7-2 7 2 7 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Weight Management</h4><p>Physician-supervised plans, including medication when appropriate.</p></div>
+      <div class="svc reveal" data-d="1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l2.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Metabolic &amp; Hormonal</h4><p>Thyroid, testosterone, menopause, fatigue — lab-driven care.</p></div>
+      <div class="svc reveal" data-d="2"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2a5 5 0 0 0-5 5c0 2 1 3 1 5h8c0-2 1-3 1-5a5 5 0 0 0-5-5ZM9 17h6M10 20h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Mood &amp; Focus</h4><p>Anxiety, depression, stress, and attention concerns.</p></div>
+      <div class="svc reveal" data-d="3"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V5a1 1 0 0 1 1-1h6v16H5a1 1 0 0 1-1-1ZM13 4h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-6" stroke="currentColor" stroke-width="1.6"/></svg></div><h4>Chronic Conditions</h4><p>Diabetes, hypertension, cholesterol, asthma — managed well.</p></div>
+      <div class="svc reveal" data-d="4"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 0 1 18 0M7 12v4M12 12v6M17 12v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Remote Monitoring</h4><p>Track BP, weight &amp; vitals between visits, watched by your doctor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- how -->
+<section class="how">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="eyebrow" style="color:var(--honey)">It's Easy</div><h2>Care in three simple steps.</h2></div>
+    <div class="hsteps">
+      <div class="hstep reveal" data-d="1"><div class="n">1</div><h4>Reach out</h4><p>Book online or call/text us. Tell us what's going on — we'll confirm your price and the best visit length up front.</p></div>
+      <div class="hstep reveal" data-d="2"><div class="n">2</div><h4>Connect by video</h4><p>Meet your physician from home, often the same or next day. No app downloads, no waiting room.</p></div>
+      <div class="hstep reveal" data-d="3"><div class="n">3</div><h4>Get a real plan</h4><p>Prescriptions, labs, referrals, and follow-up as needed — with a doctor who actually remembers you.</p></div>
+    </div>
+    <a href="tel:13308629127" class="btn btn-light">Call or Text to Book</a>
+  </div>
+</section>
+
+<!-- about -->
+<section class="about">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal"><img src="data:image/png;base64,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" alt="Joseph Cataline, M.D., board-certified physician"></div>
+    <div>
+      <div class="eyebrow reveal">Your Physician</div>
+      <h2 class="reveal" data-d="1">Joseph Cataline, M.D.</h2>
+      <p class="reveal" data-d="2">Dr. Cataline is a dual board-certified physician in internal medicine and sleep medicine who completed his residency at the Cleveland Clinic Foundation and fellowship training at Rush University. He built this practice to deliver real, unhurried care — without the runaround of the conventional system.</p>
+      <p class="reveal" data-d="3">Every visit is with him directly. No rotating providers, no rushing — just experienced, evidence-based medicine and a clear plan you can actually follow.</p>
+      <div class="creds reveal" data-d="4">
+        <span class="cred">Internal Medicine</span>
+        <span class="cred">Sleep Medicine</span>
+        <span class="cred">Cleveland Clinic Trained</span>
+        <span class="cred">Rush Fellowship</span>
+        <span class="cred">Licensed in OH &amp; IL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="eyebrow">Good to Know</div><h2>Questions, answered.</h2></div>
+    <div class="faq-grid">
+      <div class="qa reveal"><button>Do you take my insurance?<span class="plus"></span></button><div class="ans"><p>In Ohio, likely yes — we're in-network with Medicare, Medicaid, and most major plans (Aetna, Anthem BC/BS, UnitedHealthcare, Humana, Cigna, Medical Mutual, Caresource, Buckeye, with Molina coming soon), and you'd pay your normal copay. In Illinois, we don't bill insurance — all Illinois visits are simple self-pay at the flat rates listed. Either way, we'll confirm before your visit.</p></div></div>
+      <div class="qa reveal"><button>I have Medicare — can I still pay the self-pay rate?<span class="plus"></span></button><div class="ans"><p>If you're in Ohio, where we accept Medicare, we bill Medicare for covered visits rather than charging you a self-pay rate — that's the rule, and we follow it. Self-pay pricing applies to services Medicare doesn't cover. When you contact us, we'll walk you through exactly how your visit will be billed.</p></div></div>
+      <div class="qa reveal"><button>Which states can you see patients in?<span class="plus"></span></button><div class="ans"><p>We provide video visits to residents physically located in Ohio and Illinois, where the physician is licensed.</p></div></div>
+      <div class="qa reveal"><button>Can you prescribe medication?<span class="plus"></span></button><div class="ans"><p>Yes, when it's clinically appropriate. After evaluating you, the physician can send prescriptions to your pharmacy. Certain medications have additional rules and may require specific steps or an in-person evaluation.</p></div></div>
+      <div class="qa reveal"><button>How soon can I be seen?<span class="plus"></span></button><div class="ans"><p>Often the same or next day. Evening and weekend appointments are available, and if our listed times don't work, reach out — we can frequently arrange something else.</p></div></div>
+      <div class="qa reveal"><button>What's the difference between pay-per-visit and concierge?<span class="plus"></span></button><div class="ans"><p>Pay-per-visit means you simply pay for each visit you book — no commitment. Concierge is an optional monthly membership for ongoing patients who want direct access to the physician, priority scheduling, and proactive year-round care.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- final cta / book -->
+<section class="final" id="book">
+  <div class="wrap final-grid">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--honey)">Ready When You Are</div>
+      <h2>Let's get you taken care of.</h2>
+      <p>The fastest way to be seen is to call or text us directly. Tell us what's going on and we'll confirm your price and find you a time — usually the same day. Most patients have everything sorted in one quick call.</p>
+      <p style="color:rgba(255,255,255,.7);font-size:.9rem;margin-top:-4px">Hours (EST): Mon–Fri 5–9 PM · Sat 8 AM–5 PM · Sun by appointment. Texts and calls are typically answered the same day.</p>
+    </div>
+    <div class="form-card reveal" data-d="1" style="text-align:center">
+      <h3 style="font-size:1.5rem">Call or Text to Book</h3>
+      <div class="fsub">Speak directly with our office — no forms, no waiting room.</div>
+      <a href="tel:13308629127" class="bookphone">330-862-9127</a>
+      <div style="display:grid;gap:12px;margin-top:22px">
+        <a href="tel:13308629127" class="btn btn-cta" style="width:100%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="1.8"/></svg>Call Now</a>
+        <a href="sms:13308629127" class="btn btn-ghost" style="width:100%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.5-.7L3 21l1.8-4.5A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Send a Text</a>
+      </div>
+      <div class="form-note">Please don't include private medical details in a text — we'll gather what we need securely once you're scheduled.</div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div style="max-width:22em">
+        <div class="foot-brand">Convenient Care Solutions</div>
+        <p style="font-size:.9rem">Real medical care, on your schedule — video visits for Ohio &amp; Illinois residents.</p>
+      </div>
+      <div class="foot-contact">
+        <h5 style="color:var(--honey);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Contact</h5>
+        <a href="tel:13308629127">330-862-9127 (call or text)</a>
+        <a href="#">Fax: 330-663-5726 (referrals)</a>
+        <a href="https://maps.google.com/?q=3695+Boardman+Canfield+Dr+Building+B+Canfield+OH+44406" target="_blank" rel="noopener" style="margin-top:6px">3695 Boardman Canfield Dr, Building B<br>Canfield, OH 44406</a>
+      </div>
+      <div class="foot-hours">
+        <h5>Hours</h5>
+        Mon–Fri: 5–9 PM EST<br>Saturday: 8 AM–5 PM EST<br>Sunday: By appointment
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <a href="/privacy" style="color:var(--honey)">Privacy / HIPAA Notice</a> · <a href="/terms" style="color:var(--honey)">Patient Service Agreement &amp; Terms</a> · <a href="/telehealth-consent" style="color:var(--honey)">Telehealth Consent</a>
+      <br><br><span class="em">Convenient Care Solutions is not an emergency service.</span> If you are experiencing a medical emergency, call 911 or go to the nearest emergency room immediately.
+      <br><br>This page is for general information and does not constitute medical advice or create a physician–patient relationship. Self-pay pricing reflects our standard rates and is confirmed before service; concierge membership is a direct-care arrangement and is not health insurance. Telehealth is available only to patients located in states where the physician is licensed (Ohio and Illinois). © <span id="yr"></span> Convenient Care Solutions (JRCNMC Holdings LLC). All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile CTA -->
+<div class="mobile-cta">
+  <a href="tel:13308629127" class="btn btn-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="1.8"/></svg>Call</a>
+  <a href="sms:13308629127" class="btn btn-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.5-.7L3 21l1.8-4.5A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Text</a>
+</div>
+
+<script>
+  const head=document.getElementById('head');
+  addEventListener('scroll',()=>head.classList.toggle('scrolled',scrollY>20));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.qa button').forEach(b=>b.addEventListener('click',()=>{
+    const qa=b.parentElement,ans=qa.querySelector('.ans'),open=qa.classList.contains('open');
+    document.querySelectorAll('.qa').forEach(o=>{o.classList.remove('open');o.querySelector('.ans').style.maxHeight=null;});
+    if(!open){qa.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+  }));
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
