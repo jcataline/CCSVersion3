@@ -78,7 +78,8 @@ pre-stripped Squarespace version.
 
 ## Legal / compliance pages (added for LegitScript + patient transparency)
 - `privacy.html`  -> /privacy  (HIPAA Notice of Privacy Practices — verbatim from attorney draft)
-- `terms.html`    -> /terms    (Patient Service Agreement, Controlled Substance & Prescription History consents; membership pricing set to single $199/mo concierge + $99/$159/$249 visits)
+- `terms.html`    -> /terms    (Patient Service Agreement, Controlled Substance & Prescription History consents; membership pricing to be discussed by physician and patient)
 - `telehealth-consent.html` -> /telehealth-consent  (Telehealth, AI & Remote Monitoring consent — verbatim)
 All three are linked in the site footer. Public practice address (Canfield) is in the footer;
 the Selkirk/Youngstown address remains the official + Privacy Contact address per the attorney draft.
+Commit Changes
