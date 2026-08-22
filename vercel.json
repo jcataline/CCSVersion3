@@ -1,5 +1,6 @@
-{ "cleanUrls": true, "trailingSlash": false }
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     { "source": "/ohio", "destination": "/", "permanent": true },
     { "source": "/chicago", "destination": "/", "permanent": true },
